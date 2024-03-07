@@ -1,0 +1,19 @@
+@import "reset";
+@import "variables/global";
+//@import "themes/light";
+//@import "themes/dark";
+// @import "fonts/fonts.scss";
+//@import '../../shared/fonts/Montserrat/stylesheet.scss';
+
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+    // max-width: 1280px;
+    margin: 0 auto;
+}
+      

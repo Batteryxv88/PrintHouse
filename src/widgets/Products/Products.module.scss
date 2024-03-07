@@ -1,0 +1,89 @@
+.products {
+    position: absolute;
+    margin: 0 auto;
+    border-top: 3px solid rgba(226,62,109,1);
+    z-index: 0;
+}
+
+.productsBox {
+    padding: 100px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 26px;
+    align-items: center;
+    color: var(--textColorDarkBlue);
+    background-image: url(../../shared/assets/background/back2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    //border: 1px solid red;
+    max-width: 1280px;
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+}
+
+.productWrapper {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //border-radius: 10px;
+    align-self: center;
+    //border: 3px solid rgb(225, 225, 225);
+    //border: 3px solid #604fcd;
+
+}
+
+.img {
+    //margin-top: 7px;
+    //border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 300px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.span {
+    font-size: 14px;
+    width: 100%;
+    //background-color: #dbdbdb;
+    //background-color: #d94668;
+    ///background-color: #d94694;
+    //background-color: black;
+    //background: radial-gradient(circle, #e23e60 25%, rgba(221,154,86,1) 100%);
+    //background: radial-gradient(circle, rgba(221, 154, 86, 1) 25%, rgba(226, 62, 96, 1) 100%);
+    background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    border-top: 3px solid rgb(255, 255, 255);
+    color: white;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    //background-color: #47d9c6;
+}
+
+.titleWrapper {
+    position: relative;
+    top: -22.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 45px;
+    //border: 1px solid red;
+    margin: 0 auto;
+    border-radius: 25px;
+    z-index: 3;
+    color: white;
+    background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+}
