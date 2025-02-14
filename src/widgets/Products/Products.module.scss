@@ -1,14 +1,661 @@
+// .products {
+//     position: absolute;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226,62,109,1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     //border: 1px solid red;
+//     max-width: 1280px;
+//     margin-bottom: 200px;
+// }
+
+// .back {
+//     position: absolute;
+//     width: 100%;
+// }
+
+// .productWrapper {
+//     width: 300px;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     align-self: center;
+// }
+
+// .img {
+    
+//     border-radius: 150px;
+//     width: 300px;
+//     height: 280px;
+//     object-fit: cover;
+//     z-index: 1;
+//     //border: 1px solid red;
+//     //background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+//     // background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+//     // filter: blur(55px); 
+// }
+
+
+// .span {
+//     font-size: 14px;
+//     width: 100%;
+//     //background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+//     border-bottom-left-radius: 10px;
+//     border-bottom-right-radius: 10px;
+//     text-align: center;
+//     border-top: 3px solid rgb(255, 255, 255);
+//     //color: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+//     //color: rgba(226,62,109,1);
+// }
+
+// // .span {
+// //     font-size: 14px;
+// //     width: 100%;
+// //     background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+// //     border-bottom-left-radius: 10px;
+// //     border-bottom-right-radius: 10px;
+// //     text-align: center;
+// //     border-top: 3px solid rgb(255, 255, 255);
+// //     color: white;
+// // }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     //background-color: #47d9c6;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     //border: 1px solid red;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     color: white;
+//     background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+// }
+
+
+//вариант 2 неплохой
+
+// .products {
+//     position: relative;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226, 62, 109, 1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-bottom: 200px;
+// }
+
+// .productWrapper {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     overflow: hidden; /* Убираем лишние артефакты */
+//     transition: transform 0.3s ease;
+// }
+
+// .productWrapper:hover {
+//     transform: scale(1.03); /* Легкое увеличение всего блока */
+// }
+
+// .img {
+//     border-radius: 15px; /* Скругляем углы изображения */
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.3s ease, filter 0.3s ease;
+//     position: relative;
+//     z-index: 1;
+// }
+
+// .img:hover {
+//     transform: scale(1.1); /* Плавное увеличение изображения */
+//     filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+// }
+
+// .span {
+//     font-size: 14px;
+//     margin-top: 10px;
+//     text-align: center;
+//     color: var(--textColorDarkBlue);
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+// }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     color: white;
+//     font-weight: 600;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
+// }
+
+// вариант 3
+
+// .products {
+//     position: relative;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226, 62, 109, 1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-bottom: 200px;
+// }
+
+// .productWrapper {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     overflow: hidden; /* Убираем лишние артефакты */
+//     position: relative;
+//     transition: transform 0.3s ease;
+// }
+
+// .productWrapper:hover {
+//     transform: scale(1.03); /* Легкое увеличение всего блока */
+// }
+
+// .img {
+//     border-radius: 15px; /* Скругляем углы изображения */
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.3s ease, filter 0.3s ease;
+//     position: relative;
+//     z-index: 1;
+// }
+
+// .img:hover {
+//     transform: scale(1.1); /* Плавное увеличение изображения */
+//     filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+// }
+
+// /* Цветной фон для выделения */
+// .imageContainer {
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     border-radius: 15px;
+//     overflow: hidden;
+//     background: transparent; /* Начальный фон */
+//     transition: background 0.3s ease;
+// }
+
+// .productWrapper:hover .imageContainer {
+//     background: rgba(226, 62, 109, 0.2); /* Появляющийся фон при наведении */
+// }
+
+// .span {
+//     font-size: 14px;
+//     margin-top: 10px;
+//     text-align: center;
+//     color: var(--textColorDarkBlue);
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+// }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     color: white;
+//     font-weight: 600;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
+// }
+
+
+///44444444
+
+// .products {
+//     position: relative;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226, 62, 109, 1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-bottom: 200px;
+// }
+
+// .productWrapper {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     overflow: hidden; /* Убираем лишние артефакты */
+//     position: relative;
+//     transition: transform 0.3s ease;
+// }
+
+// .productWrapper:hover {
+//     transform: scale(1.03); /* Легкое увеличение всего блока */
+// }
+
+// .img {
+//     border-radius: 15px; /* Скругляем углы изображения */
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.3s ease, filter 0.3s ease;
+//     position: relative;
+//     z-index: 1;
+// }
+
+// .img:hover {
+//     transform: scale(1.1); /* Плавное увеличение изображения */
+//     filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+// }
+
+// /* Размытый кружок */
+// .imageContainer {
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     border-radius: 15px;
+//     overflow: hidden;
+// }
+
+// .imageContainer::before {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 60%; /* Размер кружка (меньше изображения) */
+//     height: 60%;
+//     border-radius: 50%; /* Форма кружка */
+//     background: rgba(226, 62, 109, 0.5); /* Цвет кружка */
+//     //box-shadow: 0 0 40px 20px rgba(226, 62, 109, 0.5); /* Размытие снаружи */
+//     opacity: 0; /* Начальная прозрачность */
+//     transition: opacity 0.3s ease, box-shadow 0.3s ease;
+//     z-index: 0;
+    
+// }
+
+// .productWrapper:hover .imageContainer::before {
+//     opacity: 1; /* Показываем кружок при наведении */
+// }
+
+// .span {
+//     font-size: 14px;
+//     margin-top: 10px;
+//     text-align: center;
+//     color: var(--textColorDarkBlue);
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+// }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     color: white;
+//     font-weight: 600;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
+// }
+
+
+/// 55555555 хороший вариант
+
+// .products {
+//     position: relative;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226, 62, 109, 1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-bottom: 200px;
+// }
+
+// .productWrapper {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     overflow: hidden; /* Убираем лишние артефакты */
+//     position: relative;
+//     transition: transform 0.3s ease;
+// }
+
+// .productWrapper:hover {
+//     transform: scale(1.03); /* Легкое увеличение всего блока */
+// }
+
+// .img {
+//     border-radius: 15px; /* Скругляем углы изображения */
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.3s ease, filter 0.3s ease;
+//     position: relative;
+//     z-index: 1;
+// }
+
+// .img:hover {
+//     transform: scale(1.1); /* Плавное увеличение изображения */
+//     filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+// }
+
+// /* Размытый кружок */
+// .imageContainer {
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     border-radius: 15px;
+//     overflow: hidden;
+// }
+
+// .imageContainer::before {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 60%; /* Размер кружка (меньше изображения) */
+//     height: 60%;
+//     border-radius: 50%; /* Форма кружка */
+//     //background: rgba(226, 62, 109, 0.5); /* Цвет кружка */
+//     //background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+//     background: radial-gradient(circle, rgba(255, 100, 150, 0.4) 0%, rgba(221, 86, 173, 0.2) 100%);
+//     opacity: 0; /* Начальная прозрачность */
+//     transition: opacity 0.3s ease, filter 0.3s ease;
+//     z-index: 0;
+//     filter: blur(30px); /* Размытие фона */
+// }
+
+// .productWrapper:hover .imageContainer::before {
+//     opacity: 1; /* Показываем кружок при наведении */
+// }
+
+// .span {
+//     font-size: 14px;
+//     margin-top: 10px;
+//     text-align: center;
+//     color: var(--textColorDarkBlue);
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+// }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     color: white;
+//     font-weight: 600;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
+// }
+
+
+//// 666666  тоже хорошо
+
+// .products {
+//     position: relative;
+//     margin: 0 auto;
+//     border-top: 3px solid rgba(226, 62, 109, 1);
+//     z-index: 0;
+// }
+
+// .productsBox {
+//     padding: 100px 0 0 0;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     row-gap: 30px;
+//     column-gap: 26px;
+//     align-items: center;
+//     color: var(--textColorDarkBlue);
+//     background-image: url(../../shared/assets/background/back2.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     margin-bottom: 200px;
+//     perspective: 1000px; /* Добавляем перспективу */
+// }
+
+// .productWrapper {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     overflow: hidden; /* Убираем лишние артефакты */
+//     position: relative;
+//     transition: transform 0.3s ease;
+//     transform-style: preserve-3d; /* Сохраняем 3D-эффект */
+// }
+
+// .img {
+//     border-radius: 15px; /* Скругляем углы изображения */
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     transition: transform 0.3s ease, filter 0.3s ease;
+//     position: relative;
+//     z-index: 1;
+//     transform: translateZ(0); /* Начальное положение */
+// }
+
+// .img:hover {
+//     transform: translateZ(30px) scale(1.1); /* "Выезжает" вперед и увеличивается */
+//     filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+// }
+
+// /* Размытый кружок */
+// .imageContainer {
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     border-radius: 15px;
+//     overflow: hidden;
+// }
+
+// .imageContainer::before {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 80%; /* Размер кружка */
+//     height: 80%;
+//     border-radius: 50%; /* Форма кружка */
+//     background: radial-gradient(circle, rgba(255, 100, 150, 0.4) 0%, rgba(221, 86, 173, 0.2) 100%);
+//     opacity: 0; /* Начальная прозрачность */
+//     transition: opacity 0.3s ease, filter 0.3s ease;
+//     z-index: 0;
+//     filter: blur(20px); /* Размытие фона */
+// }
+
+// .productWrapper:hover .imageContainer::before {
+//     opacity: 1; /* Показываем кружок при наведении */
+// }
+
+// .span {
+//     font-size: 14px;
+//     margin-top: 10px;
+//     text-align: center;
+//     color: var(--textColorDarkBlue);
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+// }
+
+// .title {
+//     text-align: center;
+//     font-size: 22px;
+//     color: white;
+//     font-weight: 600;
+// }
+
+// .titleWrapper {
+//     position: relative;
+//     top: -22.5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 280px;
+//     height: 45px;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     z-index: 3;
+//     background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
+// }
+
+///7777   
+/// 
+
 .products {
-    position: absolute;
+    position: relative;
     margin: 0 auto;
-    border-top: 3px solid rgba(226,62,109,1);
+    border-top: 3px solid rgba(226, 62, 109, 1);
     z-index: 0;
 }
 
 .productsBox {
     padding: 100px 0 0 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     row-gap: 30px;
     column-gap: 26px;
     align-items: center;
@@ -17,59 +664,97 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    //border: 1px solid red;
     max-width: 1280px;
-}
-
-.back {
-    position: absolute;
-    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    perspective: 1000px; /* Добавляем перспективу */
 }
 
 .productWrapper {
-    width: 300px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //border-radius: 10px;
-    align-self: center;
-    //border: 3px solid rgb(225, 225, 225);
-    //border: 3px solid #604fcd;
-
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Убираем лишние артефакты */
+    position: relative;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d; /* Сохраняем 3D-эффект */
 }
 
 .img {
-    //margin-top: 7px;
-    //border-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    width: 300px;
-    height: 280px;
+    border-radius: 15px; /* Скругляем углы изображения */
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0); /* Начальное положение */
+}
+
+.img:hover {
+    transform: translateZ(30px) scale(1.1); /* "Выезжает" вперед и увеличивается */
+    filter: brightness(1.1) saturate(1.2); /* Легкое осветление и усиление цвета */
+}
+
+/* Размытый кружок */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.imageContainer::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Размер кружка */
+    height: 80%;
+    border-radius: 50%; /* Форма кружка */
+    opacity: 0; /* Начальная прозрачность */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    z-index: 0;
+    filter: blur(20px); /* Размытие фона */
+}
+
+/* Цветовые варианты для кружков */
+.productWrapper:nth-child(3n + 1) .imageContainer::before {
+    background: radial-gradient(circle, rgba(255, 100, 150, 0.4) 0%, rgba(221, 86, 173, 0.2) 100%);
+}
+
+.productWrapper:nth-child(3n + 2) .imageContainer::before {
+    background: radial-gradient(circle, rgba(100, 120, 255, 0.4) 0%, rgba(86, 101, 221, 0.2) 100%);
+}
+
+.productWrapper:nth-child(3n + 3) .imageContainer::before {
+    background: radial-gradient(circle, rgba(255, 160, 100, 0.4) 0%, rgba(221, 140, 86, 0.2) 100%);
+}
+
+.productWrapper:hover .imageContainer::before {
+    opacity: 1; /* Показываем кружок при наведении */
 }
 
 .span {
     font-size: 14px;
-    width: 100%;
-    //background-color: #dbdbdb;
-    //background-color: #d94668;
-    ///background-color: #d94694;
-    //background-color: black;
-    //background: radial-gradient(circle, #e23e60 25%, rgba(221,154,86,1) 100%);
-    //background: radial-gradient(circle, rgba(221, 154, 86, 1) 25%, rgba(226, 62, 96, 1) 100%);
-    background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    margin-top: 10px;
     text-align: center;
-    border-top: 3px solid rgb(255, 255, 255);
-    color: white;
+    color: var(--textColorDarkBlue);
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .title {
     text-align: center;
     font-size: 22px;
-    //background-color: #47d9c6;
+    color: white;
+    font-weight: 600;
 }
 
 .titleWrapper {
@@ -80,10 +765,8 @@
     justify-content: center;
     width: 280px;
     height: 45px;
-    //border: 1px solid red;
     margin: 0 auto;
     border-radius: 25px;
     z-index: 3;
-    color: white;
-    background: radial-gradient(circle, rgba(221,86,173,1) 0%, rgba(226,62,109,1) 100%);
+    background: radial-gradient(circle, rgba(221, 86, 173, 1) 0%, rgba(226, 62, 109, 1) 100%);
 }

@@ -1,45 +1,65 @@
 import { createSlice } from "@reduxjs/toolkit";
-import vizitka from '../../../../shared/assets/pictures/grid/1.jpg'
-import calendar from '../../../../shared/assets/pictures/grid/16.jpg'
-import bloknot from '../../../../shared/assets/pictures/grid/14.jpg'
-import listovka from '../../../../shared/assets/pictures/grid/19.jpg'
-import flazhok from '../../../../shared/assets/pictures/grid/20.jpg'
-import broshura from '../../../../shared/assets/pictures/grid/3.jpg'
-import buklet from '../../../../shared/assets/pictures/grid/11.jpg'
-import birdekel from '../../../../shared/assets/pictures/grid/5.jpg'
+import blanks from '../../../../shared/assets/pictures/grid2/blanks.png'
+import notebooks from '../../../../shared/assets/pictures/grid2/notebooks.png'
+import brochures from '../../../../shared/assets/pictures/grid2/brochures.png'
+import labels from '../../../../shared/assets/pictures/grid2/labels.png'
+import charters from '../../../../shared/assets/pictures/grid2/charters.png'
+import flyers from '../../../../shared/assets/pictures/grid2/flyers.png'
+import postcards from '../../../../shared/assets/pictures/grid2/postcards.png'
+import booklets from '../../../../shared/assets/pictures/grid2/booklets.png'
+import presentations from '../../../../shared/assets/pictures/grid2/presentations.png'
+import catalogs from '../../../../shared/assets/pictures/grid2/catalogs.png'
+import flags from '../../../../shared/assets/pictures/grid2/flags.png'
+import sheets from '../../../../shared/assets/pictures/grid2/sheets.png'
 
 const photos = [
     {
-        name: "визитки",
-        url: vizitka,
-    },
-    {
-        name: "календари",
-        url: calendar,
+        name: "бланки",
+        url: blanks,
     },
     {
         name: "блокноты",
-        url: bloknot,
-    },
-    {
-        name: "листовки",
-        url: listovka,
-    },
-    {
-        name: "флажки",
-        url: flazhok,
+        url: notebooks,
     },
     {
         name: "брошюры",
-        url: broshura,
+        url: brochures,
+    },
+    {
+        name: "наклейки",
+        url: labels,
+    },
+    {
+        name: "дипломы",
+        url: charters,
+    },
+    {
+        name: "листовки",
+        url: flyers,
+    },
+    {
+        name: "открытки",
+        url: postcards,
     },
     {
         name: "буклеты",
-        url: buklet,
+        url: booklets,
     },
     {
-        name: "бирдекели",
-        url: birdekel,
+        name: "презентации",
+        url: presentations,
+    },
+    {
+        name: "каталоги",
+        url: catalogs,
+    },
+    {
+        name: "флажки",
+        url: flags,
+    },
+    {
+        name: "листовая печать",
+        url: sheets,
     },
 ];
 
