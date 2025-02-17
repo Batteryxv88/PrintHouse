@@ -1,11 +1,52 @@
+// .description {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 100px;
+// }
+
+// .paragraf {
+//     font-size: 18px;
+//     line-height: 30px;
+//     color: var(--text_gray);
+// }
+
 .description {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    padding: 80px 20px 120px; /* Гибкие отступы */
+    text-align: center; /* Выравниваем текст по центру */
 }
 
 .paragraf {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1.19rem; /* 18px в rem */
+    line-height: 1.5; /* Соотношение высоты строки */
     color: var(--text_gray);
+    margin: 0; /* Убираем лишние отступы */
+    max-width: 800px; /* Ограничиваем максимальную ширину текста */
+    margin: 0 auto; /* Центрируем текст */
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .description {
+        padding: 40px 15px 60px; /* Уменьшаем отступы */
+    }
+
+    .paragraf {
+        font-size: 1.05rem; /* 16px в rem */
+        line-height: 1.4; /* Уменьшаем межстрочный интервал */
+    }
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 480px) {
+    .description {
+        padding: 30px 10px 50px; /* Минимальные отступы для телефонов */
+    }
+
+    .paragraf {
+        font-size: 0.9375rem; /* 15px в rem */
+        line-height: 1.3; /* Уменьшаем межстрочный интервал */
+        max-width: 100%; /* Убираем ограничение ширины */
+    }
 }

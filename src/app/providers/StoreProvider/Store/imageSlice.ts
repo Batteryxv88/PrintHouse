@@ -1,16 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import blanks from '../../../../shared/assets/pictures/grid2/blanks.png'
-import notebooks from '../../../../shared/assets/pictures/grid2/notebooks.png'
-import brochures from '../../../../shared/assets/pictures/grid2/brochures.png'
-import labels from '../../../../shared/assets/pictures/grid2/labels.png'
-import charters from '../../../../shared/assets/pictures/grid2/charters.png'
-import flyers from '../../../../shared/assets/pictures/grid2/flyers.png'
-import postcards from '../../../../shared/assets/pictures/grid2/postcards.png'
-import booklets from '../../../../shared/assets/pictures/grid2/booklets.png'
-import presentations from '../../../../shared/assets/pictures/grid2/presentations.png'
-import catalogs from '../../../../shared/assets/pictures/grid2/catalogs.png'
-import flags from '../../../../shared/assets/pictures/grid2/flags.png'
-import sheets from '../../../../shared/assets/pictures/grid2/sheets.png'
+
+
+import blanks from '../../../../shared/assets/pictures/grid3/blank1.svg?url'
+import notebooks from '../../../../shared/assets/pictures/grid3/bloknot2.svg?url'
+import brochures from '../../../../shared/assets/pictures/grid3/broshura.svg?url'
+import labels from '../../../../shared/assets/pictures/grid3/stiker.svg?url'
+import charters from '../../../../shared/assets/pictures/grid3/gramota2.svg?url'
+import flyers from '../../../../shared/assets/pictures/grid3/listovka2.svg?url'
+import postcards from '../../../../shared/assets/pictures/grid3/otkrytka1.svg?url'
+import booklets from '../../../../shared/assets/pictures/grid3/buklet.svg?url'
+import presentations from '../../../../shared/assets/pictures/grid3/present1.svg?url'
+import catalogs from '../../../../shared/assets/pictures/grid3/katalog.svg?url'
+import flags from '../../../../shared/assets/pictures/grid3/flag.svg?url'
+import sheets from '../../../../shared/assets/pictures/grid3/listovka1.svg?url'
+import vizitka from '../../../../shared/assets/pictures/grid3/vizitka4.svg?url'
+import plakat from '../../../../shared/assets/pictures/grid3/plakat.svg?url'
+import instruct from '../../../../shared/assets/pictures/grid3/instruct.svg?url'
 
 const photos = [
     {
@@ -18,8 +23,8 @@ const photos = [
         url: blanks,
     },
     {
-        name: "блокноты",
-        url: notebooks,
+        name: "плакаты",
+        url: plakat,
     },
     {
         name: "брошюры",
@@ -61,6 +66,19 @@ const photos = [
         name: "листовая печать",
         url: sheets,
     },
+    {
+        name: "визитки",
+        url: vizitka,
+    },
+    {
+        name: "блокноты",
+        url: notebooks,
+    },
+    {
+        name: "инструкции",
+        url: instruct,
+    },
+    
 ];
 
 const imageSlice = createSlice({

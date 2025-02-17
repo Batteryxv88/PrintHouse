@@ -1,47 +1,130 @@
-.titleWrapper {
-    padding: 30px 0 0 0;
+// .titleWrapper {
+//     padding: 30px 0 0 0;
+// }
 
-}
+// .box {
+//     margin: 0 auto;
+//     display: flex;
+//     flex-direction: column;
+//    padding: 230px 60px 0 200px;
+// }
 
-.box {
-    //max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-   // width: 300px;
-   padding: 230px 60px 0 200px;
-}
+// .title {
+//     margin-top: 500px;
+//     color: var(--textColorDarkBlue);
+//     font-size: 16px;
+//     line-height: 18px;
+//     max-width: 900px;
+//     color: white;
+//     align-self: flex-start;
+// }
 
-.title {
-    margin-top: 500px;
-    color: var(--textColorDarkBlue);
-    font-size: 16px;
-    line-height: 18px;
-    max-width: 900px;
-    color: white;
-    align-self: flex-start;
-    //background-position: ;
-}
+// .tit {
+//     width: 600px;
+//     color: white;
+//     align-self: flex-start;
+//     font-size: 90px;
+//     line-height: 100px;
+// }
 
-.tit {
-    //margin-top: 260px;
-    width: 600px;
-    //margin-left: 30px;
-    color: white;
-    align-self: flex-start;
-    font-size: 90px;
-    line-height: 100px;
-}
-
-// .title:last-of-type {
-//     margin-top: 50px;
-//     text-align: end;
-//     align-self: flex-end;
+// .img {
+//     width: 200px;
+//     height: 200px;
 // }
 
 
 
+
+.titleWrapper {
+    position: relative;
+    height: auto; /* Убираем фиксированную высоту */
+    min-height: 660px; /* Минимальная высота для больших экранов */
+    background-image: url("../../shared/assets/pictures/women2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Изображение масштабируется */
+    background-position: top center; /* Центрируем изображение по вертикали сверху */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    overflow: hidden; /* Обрезаем лишние части изображения */
+}
+
+.box {
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    display: flex;
+    flex-direction: column;
+    padding: 100px 40px 0 40px; /* Гибкие отступы */
+    text-align: left; /* Выравниваем текст по левому краю */
+}
+
+.tit {
+    font-size: 90px; /* Фиксированный размер шрифта для десктопов */
+    line-height: 1.2; /* Соотношение высоты строки */
+    color: white;
+    margin: 0; /* Убираем лишние отступы */
+    max-width: 900px; /* Ограничиваем максимальную ширину */
+    align-self: flex-start; /* Выравниваем текст по левому краю */
+}
+
+.imgWrapper {
+    width: 100%; /* Занимает всю доступную ширину */
+    height: auto; /* Подстраивается под пропорции */
+    margin-top: 20px; /* Отступ сверху */
+}
+
 .img {
-    width: 200px;
-    height: 200px;
+    width: 100%; /* Занимает всю ширину родителя */
+    height: auto; /* Сохраняет пропорции */
+    object-fit: cover; /* Масштабирует изображение */
+}
+
+/* Адаптация для разрешений <= 1200px */
+@media (max-width: 1200px) {
+    .titleWrapper {
+        min-height: 500px; /* Уменьшаем минимальную высоту */
+    }
+
+    .box {
+        padding: 80px 20px 0 20px; /* Уменьшаем отступы */
+    }
+
+    .tit {
+        font-size: 70px; /* Уменьшаем размер шрифта */
+    }
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .titleWrapper {
+        min-height: 400px; /* Ещё меньше высота */
+    }
+
+    .box {
+        padding: 60px 15px 0 15px; /* Уменьшаем отступы */
+    }
+
+    .tit {
+        font-size: 50px; /* Уменьшаем размер шрифта */
+    }
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 480px) {
+    .titleWrapper {
+        min-height: 300px; /* Минимальная высота для телефонов */
+        clip-path: inset(0 0 20% 0); /* Обрезаем нижнюю часть на 20% */
+    }
+
+    .box {
+        padding: 40px 10px 0 10px; /* Минимальные отступы для телефонов */
+    }
+
+    .tit {
+        font-size: 40px; /* Размер шрифта для телефонов */
+    }
+
+    .imgWrapper {
+        margin-top: 10px; /* Уменьшаем отступ сверху */
+    }
 }

@@ -1,41 +1,43 @@
-import cls from "./Header.module.scss";
-import Logo from "../../shared/pictures/logo.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import cls from './Header.module.scss';
+import Logo from '../../shared/pictures/logo-08.svg';
 
 const Header = () => {
-    const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleScroll = () => {
-        // Обновляем состояние scrollY при скролле
-        setScrollY(window.scrollY);
-    };
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    useEffect(() => {
-        // Добавляем обработчик события при монтировании компонента
-        window.addEventListener("scroll", handleScroll);
+  return (
+    <header className={`${cls.header} ${scrollY >= 50 ? cls.headerShadow : ''}`}>
+      <div className={cls.headerBox}>
+        <div className={cls.logoWrapper}>
+          <Logo className={cls.logo} />
+          <h1>Print Trip</h1>
+        </div>
 
-        // Удаляем обработчик события при размонтировании компонента
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+        <ul className={`${cls.box} ${isMenuOpen ? cls.menuOpen : ''}`}>
+          <li className={`${cls.li} ${cls.mobileVisible}`}>8 (495) 008-00-78</li>
+          <li className={`${cls.li} ${cls.mobileVisible}`}>print-trip@yandex.ru</li>
+          <li className={cls.li}>Оплата и доставка</li>
+          <li className={cls.li}>Контакты</li>
+        </ul>
 
-    return (
-        <header className={scrollY >= 50 ? cls.header + ' ' + cls.headerShadow : cls.header}>
-            <div className={cls.headerBox}>
-                <div className={cls.logoWrapper}>
-                    <Logo className={cls.logo} />
-                    <h1>Print Trip</h1>
-                </div>
-                <ul className={cls.box}>
-                    <li className={cls.li}>8 (495) 008-00-78</li>
-                    <li className={cls.li}>print-trip@yandex.ru</li>
-                    <li className={cls.li}>Оплата и доставка</li>
-                    <li className={cls.li}>Контакты</li>
-                </ul>
-            </div>
-        </header>
-    );
+        <div 
+          className={`${cls.burgerMenu} ${isMenuOpen ? cls.menuOpen : ''}`} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className={cls.burgerLine}></span>
+          <span className={cls.burgerLine}></span>
+          <span className={cls.burgerLine}></span>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;

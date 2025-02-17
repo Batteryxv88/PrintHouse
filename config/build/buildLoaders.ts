@@ -3,10 +3,28 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+    // const svgLoaderUrl = {
+    //     test: /\.svg$/i,
+    //     resourceQuery: /url/, // Если ?url, обрабатываем как URL
+    //     type: 'asset/resource',
+    // };
+    // const svgLoaderComponent = {
+    //     test: /\.svg$/i,
+    //     use: ['@svgr/webpack'], // Остальные SVG будут как React-компоненты
+    // };
     const svgLoader = {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        test: /\.svg$/i,
+        oneOf: [
+            {
+                resourceQuery: /url/, // Обрабатываем `?url` как файл
+                type: 'asset/resource',
+            },
+            {
+                use: ['@svgr/webpack'], // Остальные SVG — React-компоненты
+            },
+        ],
     };
+    
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
@@ -65,7 +83,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     return [
         fileLoader,
-        svgLoader,
+        svgLoader, // SVG как компонент
         babelLoader,
         typescriptLoader,
         cssLoader,
