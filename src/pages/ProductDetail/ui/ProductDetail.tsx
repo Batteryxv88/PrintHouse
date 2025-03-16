@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAppSelector } from "app/providers/StoreProvider/Store/hooks";
 import styles from "./ProductDetail.module.scss";
+import ContactModal from "components/ContactModal/ContactModal";
+import OrderModal from "components/OrderModal/OrderModal";
 
 interface ProductData {
     id: number;
@@ -25,6 +27,8 @@ const ProductDetail = () => {
     const photos = useAppSelector((state) => state.products.photos);
     const [product, setProduct] = useState<ProductData | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
+    const [isConsultModalOpen, setIsConsultModalOpen] = useState(false);
+    const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
 
     // Добавляем типизацию для объекта склонений
     const productCases: { [key: string]: string } = {
@@ -91,24 +95,13 @@ const ProductDetail = () => {
     // Функция для формирования ссылки WhatsApp с проверками
     const handleConsultClick = () => {
         if (!product?.name) return;
-
-        const phoneNumber = '+79153987112';
-        const productInCase = getProductCase(product.name);
-        const message = encodeURIComponent(`Добрый день! Мне хотелось бы проконсультироваться по поводу ${productInCase}.`);
-        const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappLink, '_blank');
+        setIsConsultModalOpen(true);
     };
 
     // Обработчик для кнопки заказа
     const handleOrderClick = () => {
         if (!product?.name) return;
-
-        const phoneNumber = '+79153987112';
-        const productInCase = getProductCase(product.name);
-        const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
-        const message = encodeURIComponent(`Добрый день! Мне нужно сделать заказ ${productInCase}.`);
-        const whatsappLink = `https://wa.me/${cleanPhoneNumber}?text=${message}`;
-        window.open(whatsappLink, '_blank');
+        setIsOrderModalOpen(true);
     };
 
     if (loading) {
@@ -205,6 +198,20 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+            {product && (
+                <>
+                    <ContactModal 
+                        isOpen={isConsultModalOpen}
+                        onClose={() => setIsConsultModalOpen(false)}
+                        productName={getProductCase(product.name)}
+                    />
+                    <OrderModal 
+                        isOpen={isOrderModalOpen}
+                        onClose={() => setIsOrderModalOpen(false)}
+                        productName={getProductCase(product.name)}
+                    />
+                </>
+            )}
         </div>
     );
 };
