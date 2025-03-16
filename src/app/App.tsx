@@ -2,21 +2,25 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import Header from "../widgets/Header/Header";
 import { MainPage } from "pages/MainPage";
+import ProductDetail from "pages/ProductDetail/ui/ProductDetail";
+import Footer from "../components/Footer/Footer";
 import cls from './App.module.scss'
 
 const App = () => {
     return (
         <div className={cls.app}>
-        <Header></Header>
+            <Header></Header>
             <div className="container">
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
-                    <Route path={"/"} element={<MainPage />} /> 
+                        <Route path={"/"} element={<MainPage />} /> 
+                        <Route path="/product/:id" element={<ProductDetail />} />
                         {/* <Route path={"/schedule"} element={<SchedulePage />} />
                         <Route path={"/"} element={<MainPage />} /> */}
                     </Routes>
                 </Suspense>
             </div>
+            <Footer />
         </div>
     );
 };

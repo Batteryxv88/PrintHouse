@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import cls from './Header.module.scss';
 import Logo from '../../shared/pictures/logo-08.svg';
 
@@ -7,7 +8,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+        setScrollY(window.scrollY);
+    };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -15,13 +19,13 @@ const Header = () => {
   return (
     <header className={`${cls.header} ${scrollY >= 50 ? cls.headerShadow : ''}`}>
       <div className={cls.headerBox}>
-        <div className={cls.logoWrapper}>
+        <Link to="/" className={cls.logoWrapper}>
           <Logo className={cls.logo} />
           <h1>Print Trip</h1>
-        </div>
+        </Link>
 
         <ul className={`${cls.box} ${isMenuOpen ? cls.menuOpen : ''}`}>
-          <li className={`${cls.li} ${cls.mobileVisible}`}>8 (495) 008-00-78</li>
+          <li className={`${cls.li} ${cls.mobileVisible}`}>+7 (495) 008-00-78</li>
           <li className={`${cls.li} ${cls.mobileVisible}`}>print-trip@yandex.ru</li>
           <li className={cls.li}>Оплата и доставка</li>
           <li className={cls.li}>Контакты</li>

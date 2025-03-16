@@ -209,15 +209,16 @@
     width: 100%;
     color: var(--textColorDarkBlue);
     transition: all 0.3s ease;
-    overflow: visible;
-  
-    &.headerShadow {
-      box-shadow: 0px 11px 36px -4px rgba(23, 58, 255, 0.23);
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-  }
-  
-  .headerBox {
+    box-shadow: 0px 11px 36px -4px rgba(23, 58, 255, 0.23);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.headerShadow {
+    box-shadow: 0px 11px 36px -4px rgba(23, 58, 255, 0.23);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.headerBox {
     max-width: 1280px;
     height: 100%;
     margin: 0 auto;
@@ -227,51 +228,53 @@
     align-items: center;
     padding: 0 20px;
     position: relative;
-  }
-  
-  .logoWrapper {
+}
+
+.logoWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-  
+    text-decoration: none;
+    cursor: pointer;
+
     .logo {
-      width: 25%;
-      height: 25%;
-      margin-right: 20px;
-      transition: all 0.3s ease;
+        width: 25%;
+        height: 25%;
+        margin-right: 20px;
+        transition: all 0.3s ease;
     }
-  
+
     h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      color: var(--textColorDarkBlue);
+        font-size: 1.5rem;
+        margin: 0;
+        color: var(--textColorDarkBlue);
     }
-  }
-  
-  .box {
+}
+
+.box {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     margin: 0;
     padding: 0;
-  
+
     .li {
-      margin-left: 30px;
-      cursor: pointer;
-      color: var(--text_gray);
-      font-size: 1rem;
-      line-height: 1.5;
-      white-space: nowrap;
-      transition: color 0.3s ease;
-  
-      // Скрываем контакты по умолчанию
-      &.contactInfo {
-        display: none;
-      }
+        margin-left: 30px;
+        cursor: pointer;
+        color: var(--text_gray);
+        font-size: 1rem;
+        line-height: 1.5;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+
+        // Скрываем контакты по умолчанию
+        &.contactInfo {
+            display: none;
+        }
     }
-  }
-  
-  .burgerMenu {
+}
+
+.burgerMenu {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -280,94 +283,94 @@
     cursor: pointer;
     z-index: 1000;
     position: relative;
-  
+
     .burgerLine {
-      width: 100%;
-      height: 2px;
-      background-color: var(--textColorDarkBlue);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-origin: center;
+        width: 100%;
+        height: 2px;
+        background-color: var(--textColorDarkBlue);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
     }
-  }
-  
-  // Скрываем контакты на всех разрешениях кроме десктопа
-  @media (max-width: 870px) {
+}
+
+// Скрываем контакты на всех разрешениях кроме десктопа
+@media (max-width: 870px) {
     .box .li.contactInfo {
-      display: none !important;
+        display: none !important;
     }
-  }
-  
-  // Мобильная версия
-  @media (max-width: 480px) {
+}
+
+// Мобильная версия
+@media (max-width: 480px) {
     .header {
-      height: 50px;
+        height: 50px;
     }
-  
+
     .logoWrapper {
-      .logo {
-        width: 58px;
-        height: 58px;
-      }
-  
-      h1 {
-        font-size: 1rem;
-      }
+        .logo {
+            width: 58px;
+            height: 58px;
+        }
+
+        h1 {
+            font-size: 1rem;
+        }
     }
-  
+
     .box {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background: white;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-20px);
-      transition: 
-        opacity 0.3s ease,
-        transform 0.3s ease,
-        visibility 0.3s;
-      z-index: 99;
-  
-      &.menuOpen {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-  
-      .li {
-        margin-left: 0;
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-        padding: 8px 0;
-  
-        // Показываем контакты только в мобильном меню
-        &.mobileVisible {
-          display: block !important;
-          order: -1;
-          margin-bottom: 15px;
-          font-weight: 600;
-          color: var(--textColorDarkBlue);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: 
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s;
+        z-index: 99;
+
+        &.menuOpen {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-      }
+
+        .li {
+            margin-left: 0;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            padding: 8px 0;
+
+            // Показываем контакты только в мобильном меню
+            &.mobileVisible {
+                display: block !important;
+                order: -1;
+                margin-bottom: 15px;
+                font-weight: 600;
+                color: var(--textColorDarkBlue);
+            }
+        }
     }
-  
+
     .burgerMenu {
-      display: flex;
-  
-      &.menuOpen {
-        .burgerLine:nth-child(1) {
-          transform: translateY(7px) rotate(45deg);
+        display: flex;
+
+        &.menuOpen {
+            .burgerLine:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .burgerLine:nth-child(2) {
+                opacity: 0;
+            }
+            .burgerLine:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
         }
-        .burgerLine:nth-child(2) {
-          opacity: 0;
-        }
-        .burgerLine:nth-child(3) {
-          transform: translateY(-7px) rotate(-45deg);
-        }
-      }
     }
-  }
+}
