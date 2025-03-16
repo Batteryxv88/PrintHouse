@@ -76,6 +76,12 @@ const ProductDetail = () => {
 
         setProduct(productData);
         setLoading(false);
+        
+        // Прокручиваем страницу к верху при монтировании компонента
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }, [id, photos, navigate]);
 
     const handleBack = () => {

@@ -96,13 +96,11 @@ import { useNavigate } from "react-router-dom";
 import cls from "./Products.module.scss";
 
 const Products = () => {
-
-    const photos = useAppSelector((state) => state.products.photos); // исправьте на правильный путь
+    const photos = useAppSelector((state) => state.products.photos);
     const [activeItems, setActiveItems] = useState(new Set());
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const navigate = useNavigate();
 
-    // Обновляем флаг isMobile при изменении размера окна
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -113,7 +111,7 @@ const Products = () => {
     }, []);
 
     const handleTouch = (index: number) => {
-        if (!isMobile) return; // Применяем эффект только на мобильных
+        if (!isMobile) return;
 
         const newActiveItems = new Set(activeItems);
         newActiveItems.add(index);
@@ -123,13 +121,11 @@ const Products = () => {
             newActiveItems.delete(index);
             setActiveItems(new Set(newActiveItems));
             
-            // Переходим на страницу продукта после анимации
             navigate(`/product/${photos[index].id}`);
         }, 300);
     };
 
     const handleProductClick = (id: number) => {
-        // На десктопе переходим сразу без задержки
         if (!isMobile) {
             navigate(`/product/${id}`);
         }
@@ -137,7 +133,7 @@ const Products = () => {
 
     return (
         <section className={cls.products}>
-            <div className={cls.titleWrapper}>
+            <div className={cls.titleWrapper} id="products">
                 <h3 className={cls.title}>Наша продукция</h3>
             </div>
             <section className={cls.productsBox}>

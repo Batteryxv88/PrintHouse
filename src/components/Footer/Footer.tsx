@@ -1,6 +1,32 @@
 import styles from './Footer.module.scss';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const scrollToProducts = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        
+        if (location.pathname !== '/') {
+            // Если мы не на главной странице, сначала переходим на неё
+            navigate('/', { state: { scrollToProducts: true } });
+        } else {
+            // Если мы уже на главной странице, просто прокручиваем к продукции
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                const headerOffset = 130; // Высота шапки (80px) + дополнительный отступ (50px)
+                const elementPosition = productsSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -17,10 +43,10 @@ const Footer = () => {
                     <div className={styles.footerSection}>
                         <h3>Навигация</h3>
                         <ul>
-                            <li><a href="/">Главная</a></li>
-                            <li><a href="/products">Продукция</a></li>
-                            <li><a href="/about">О компании</a></li>
-                            <li><a href="/delivery">Доставка</a></li>
+                            <li><Link to="/">Главная</Link></li>
+                            <li><a href="#products" onClick={scrollToProducts}>Продукция</a></li>
+                            <li><Link to="/about">О компании</Link></li>
+                            <li><Link to="/delivery">Доставка</Link></li>
                         </ul>
                     </div>
 
@@ -28,10 +54,10 @@ const Footer = () => {
                     <div className={styles.footerSection}>
                         <h3>Услуги</h3>
                         <ul>
-                            <li><a href="/services/design">Дизайн</a></li>
-                            <li><a href="/services/printing">Печать</a></li>
-                            <li><a href="/services/large-format">Широкоформатная печать</a></li>
-                            <li><a href="/services/post-printing">Постпечатная обработка</a></li>
+                            <li><Link to="/services/design">Дизайн</Link></li>
+                            <li><Link to="/services/printing">Печать</Link></li>
+                            <li><Link to="/services/large-format">Широкоформатная печать</Link></li>
+                            <li><Link to="/services/post-printing">Постпечатная обработка</Link></li>
                         </ul>
                     </div>
 
@@ -50,8 +76,8 @@ const Footer = () => {
                 <div className={styles.footerBottom}>
                     <p>&copy; 2025 PrintTrip. Все права защищены.</p>
                     <div className={styles.legalLinks}>
-                        <a href="/privacy">Политика конфиденциальности</a>
-                        <a href="/terms">Условия использования</a>
+                        <Link to="/privacy">Политика конфиденциальности</Link>
+                        <Link to="/terms">Условия использования</Link>
                     </div>
                 </div>
             </div>
