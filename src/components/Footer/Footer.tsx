@@ -9,8 +9,8 @@ const Footer = () => {
                     <div className={styles.footerSection}>
                         <h3>Контакты</h3>
                         <p>Телефон: +7 (915) 398-71-12</p>
-                        <p>Email: info@printservice.ru</p>
-                        <p>Адрес: г. Москва, ул. Примерная, 123</p>
+                        <p>Email: info@printtrip.ru</p>
+                        <p>Адрес: г. Москва, Бумажный проезд, 14с3</p>
                     </div>
 
                     {/* Навигация */}
@@ -48,7 +48,7 @@ const Footer = () => {
 
                 {/* Нижняя часть футера */}
                 <div className={styles.footerBottom}>
-                    <p>&copy; 2024 PrintService. Все права защищены.</p>
+                    <p>&copy; 2025 PrintTrip. Все права защищены.</p>
                     <div className={styles.legalLinks}>
                         <a href="/privacy">Политика конфиденциальности</a>
                         <a href="/terms">Условия использования</a>
