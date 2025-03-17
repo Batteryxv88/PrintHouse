@@ -107,6 +107,7 @@ const Products = () => {
     const photos = useAppSelector((state: RootState) => state.products.photos);
     const [activeItems, setActiveItems] = useState<Set<number>>(new Set());
     const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
+    const [touchStartTime, setTouchStartTime] = useState<number>(0);
 
     useEffect(() => {
         const handleResize = () => {
@@ -143,10 +144,22 @@ const Products = () => {
         }
     };
 
+    const handleTouchStart = () => {
+        setTouchStartTime(Date.now());
+    };
+
     const handleProductClick = (id: number) => {
-        if (!isMobile) {
-            navigate(`/product/${id}`);
+        if (isMobile) {
+            const touchEndTime = Date.now();
+            const touchDuration = touchEndTime - touchStartTime;
+            
+            // Если касание длилось меньше 200мс, игнорируем его
+            if (touchDuration < 200) {
+                return;
+            }
         }
+        
+        navigate(`/product/${id}`);
     };
 
     return (
@@ -161,7 +174,10 @@ const Products = () => {
                         className={`${cls.productWrapper} ${
                             isMobile && activeItems.has(index) ? cls.active : ""
                         }`}
-                        onTouchStart={() => handleItemClick(index)}
+                        onTouchStart={() => {
+                            handleTouchStart();
+                            handleItemClick(index);
+                        }}
                         onMouseEnter={() => handleItemHover(index)}
                         onClick={() => handleProductClick(item.id)}
                         role="button"
