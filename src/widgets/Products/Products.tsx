@@ -93,13 +93,20 @@
 import { useAppSelector } from "app/providers/StoreProvider/Store/hooks";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "app/providers/StoreProvider/Store";
 import cls from "./Products.module.scss";
 
+interface Photo {
+    id: number;
+    name: string;
+    url: string;
+}
+
 const Products = () => {
-    const photos = useAppSelector((state) => state.products.photos);
-    const [activeItems, setActiveItems] = useState(new Set());
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const navigate = useNavigate();
+    const photos = useAppSelector((state: RootState) => state.products.photos);
+    const [activeItems, setActiveItems] = useState<Set<number>>(new Set());
+    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleResize = () => {
@@ -110,19 +117,30 @@ const Products = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const handleTouch = (index: number) => {
-        if (!isMobile) return;
+    const handleItemClick = (id: number) => {
+        setActiveItems(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(id)) {
+                newSet.delete(id);
+            } else {
+                newSet.add(id);
+            }
+            return newSet;
+        });
+    };
 
-        const newActiveItems = new Set(activeItems);
-        newActiveItems.add(index);
-        setActiveItems(newActiveItems);
-
-        setTimeout(() => {
-            newActiveItems.delete(index);
-            setActiveItems(new Set(newActiveItems));
-            
-            navigate(`/product/${photos[index].id}`);
-        }, 300);
+    const handleItemHover = (id: number) => {
+        if (!isMobile) {
+            setActiveItems(prev => {
+                const newSet = new Set(prev);
+                if (newSet.has(id)) {
+                    newSet.delete(id);
+                } else {
+                    newSet.add(id);
+                }
+                return newSet;
+            });
+        }
     };
 
     const handleProductClick = (id: number) => {
@@ -137,13 +155,14 @@ const Products = () => {
                 <h3 className={cls.title}>Наша продукция</h3>
             </div>
             <section className={cls.productsBox}>
-                {photos.map((item, index) => (
+                {photos.map((item: Photo, index: number) => (
                     <div
                         key={index}
                         className={`${cls.productWrapper} ${
                             isMobile && activeItems.has(index) ? cls.active : ""
                         }`}
-                        onTouchStart={() => handleTouch(index)}
+                        onTouchStart={() => handleItemClick(index)}
+                        onMouseEnter={() => handleItemHover(index)}
                         onClick={() => handleProductClick(item.id)}
                         role="button"
                         tabIndex={0}

@@ -96,6 +96,9 @@ const photos = [
     
 ];
 
+
+
+
 const imageSlice = createSlice({
     name: 'imageSlice',
     initialState: {

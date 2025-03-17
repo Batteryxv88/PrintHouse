@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import imageSlice from "./imageSlice";
-
+import productSlice from "./productSlice";
 
 const store = configureStore({
     reducer: {
-        products: imageSlice
-        
+        products: imageSlice,
+        productData: productSlice
     }
 })
 

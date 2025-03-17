@@ -28,7 +28,7 @@ const Header = () => {
           <li className={`${cls.li} ${cls.mobileVisible}`}>+7 (495) 008-00-78</li>
           <li className={`${cls.li} ${cls.mobileVisible}`}>print-trip@yandex.ru</li>
           <li className={cls.li}>Оплата и доставка</li>
-          <li className={cls.li}>Контакты</li>
+          <li className={cls.li}><Link to="/contacts">Контакты</Link></li>
         </ul>
 
         <div 
