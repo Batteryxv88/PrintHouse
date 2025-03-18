@@ -27,6 +27,23 @@ const Footer = () => {
         }
     };
 
+    const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        
+        if (location.pathname !== '/') {
+            // Если мы не на главной странице, сначала переходим на неё
+            navigate('/', { 
+                state: { scrollToTop: true } 
+            });
+        } else {
+            // Если мы уже на главной странице, просто прокручиваем вверх
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -43,7 +60,7 @@ const Footer = () => {
                     <div className={styles.footerSection}>
                         <h3>Навигация</h3>
                         <ul>
-                            <li><Link to="/">Главная</Link></li>
+                            <li><a href="/" onClick={scrollToTop}>Главная</a></li>
                             <li><a href="#products" onClick={scrollToProducts}>Продукция</a></li>
                             <li><Link to="/about">О компании</Link></li>
                             <li><Link to="/delivery">Доставка</Link></li>

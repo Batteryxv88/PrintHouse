@@ -20,28 +20,39 @@ const Contacts = () => {
                         mapContainer.innerHTML = '';
                     }
 
+                    // Создаем карту
                     map = new window.ymaps.Map('map', {
-                        center: [55.76, 37.64], // Координаты офиса в Москве
+                        center: [55.788097, 37.586767],
                         zoom: 15,
+                        controls: [
+                            'zoomControl',
+                            'fullscreenControl',
+                            'typeSelector',
+                            'searchControl'
+                        ]
                     });
 
+                    // Создаем метку
                     const placemark = new window.ymaps.Placemark(
-                        [55.76, 37.64],
+                        [55.788097, 37.586767],
                         {
                             balloonContent: 'Print Trip',
-                            hintContent: 'Наш офис',
+                            hintContent: 'Print Trip'
                         },
                         {
-                            preset: 'islands#redStretchyIcon',
+                            preset: 'islands#redDotIcon'
                         }
                     );
 
                     map.geoObjects.add(placemark);
+                    
+                    // Убираем автоматическое открытие балуна
+                    // placemark.balloon.open();
                 });
             } else {
                 // Если ymaps еще не загружен, загружаем скрипт
                 const script = document.createElement('script');
-                script.src = 'https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU';
+                script.src = 'https://api-maps.yandex.ru/2.1/?apikey=4e86c26f-e7b8-4cb7-9456-7609cb999e3f&lang=ru_RU';
                 script.async = true;
                 script.onload = initMap;
                 document.body.appendChild(script);
@@ -66,26 +77,34 @@ const Contacts = () => {
                 <div className={cls.content}>
                     <div className={cls.info}>
                         <div className={cls.contactBlock}>
-                            <h2 className={cls.sectionTitle}>Адрес</h2>
-                            <p>г. Москва, Бумажный проезд, 14с3</p>
-                            <p>Бизнес-центр "Бумажный"</p>
+                            <div className={cls.contactContent}>
+                                <h2 className={cls.sectionTitle}>Адрес</h2>
+                                <p>г. Москва, Бумажный проезд, 14с3</p>
+                                <p>Бизнес-центр "Бумажный"</p>
+                            </div>
                         </div>
 
                         <div className={cls.contactBlock}>
-                            <h2 className={cls.sectionTitle}>Телефоны</h2>
-                            <p>+7 (495) 008-00-78</p>
-                            <p>+7 (915) 398-71-12</p>
+                            <div className={cls.contactContent}>
+                                <h2 className={cls.sectionTitle}>Телефоны</h2>
+                                <p>+7 (495) 008-00-78</p>
+                                <p>+7 (915) 398-71-12</p>
+                            </div>
                         </div>
 
                         <div className={cls.contactBlock}>
-                            <h2 className={cls.sectionTitle}>Email</h2>
-                            <p>print-trip@yandex.ru</p>
+                            <div className={cls.contactContent}>
+                                <h2 className={cls.sectionTitle}>Email</h2>
+                                <p>print-trip@yandex.ru</p>
+                            </div>
                         </div>
 
                         <div className={cls.contactBlock}>
-                            <h2 className={cls.sectionTitle}>Режим работы</h2>
-                            <p>Пн-Пт: 9:00 - 18:00</p>
-                            <p>Сб-Вс: Выходной</p>
+                            <div className={cls.contactContent}>
+                                <h2 className={cls.sectionTitle}>Режим работы</h2>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                <p>Сб-Вс: Выходной</p>
+                            </div>
                         </div>
                     </div>
 

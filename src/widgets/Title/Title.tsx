@@ -42,10 +42,7 @@ const Title = () => {
             <div className={cls.box}>
                 <h1 className={cls.tit}>Типография Print Trip</h1>
             </div>
-            <div className={cls.imgWrapper}>
-                {/* Если нужно добавить изображение */}
-                {/* <img src={someImage} alt="Description" className={cls.img} /> */}
-            </div>
+            <div className={cls.imgWrapper}></div>
         </section>
     );
 };

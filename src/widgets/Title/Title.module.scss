@@ -37,94 +37,94 @@
 
 .titleWrapper {
     position: relative;
-    height: auto; /* Убираем фиксированную высоту */
-    min-height: 660px; /* Минимальная высота для больших экранов */
+    height: auto;
+    min-height: 660px;
     background-image: url("../../shared/assets/pictures/women2.jpg");
     background-repeat: no-repeat;
-    background-size: cover; /* Изображение масштабируется */
-    background-position: top center; /* Центрируем изображение по вертикали сверху */
+    background-size: cover;
+    background-position: top center;
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    overflow: hidden; /* Обрезаем лишние части изображения */
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 70px;
 }
 
 .box {
-    max-width: 1200px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрируем контейнер */
+    max-width: 700px;
     display: flex;
     flex-direction: column;
-    padding: 100px 40px 0 40px; /* Гибкие отступы */
-    text-align: left; /* Выравниваем текст по левому краю */
+    padding: 50px 40px 0 40px;
+    text-align: left;
 }
 
 .tit {
-    font-size: 90px; /* Фиксированный размер шрифта для десктопов */
-    line-height: 1.2; /* Соотношение высоты строки */
     color: white;
-    margin: 0; /* Убираем лишние отступы */
-    max-width: 900px; /* Ограничиваем максимальную ширину */
-    align-self: flex-start; /* Выравниваем текст по левому краю */
+    font-size: 90px;
+    line-height: 100px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .imgWrapper {
-    width: 100%; /* Занимает всю доступную ширину */
-    height: auto; /* Подстраивается под пропорции */
-    margin-top: 20px; /* Отступ сверху */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .img {
-    width: 100%; /* Занимает всю ширину родителя */
-    height: auto; /* Сохраняет пропорции */
-    object-fit: cover; /* Масштабирует изображение */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Адаптация для разрешений <= 1200px */
 @media (max-width: 1200px) {
     .titleWrapper {
-        min-height: 500px; /* Уменьшаем минимальную высоту */
+        min-height: 500px;
     }
 
     .box {
-        padding: 80px 20px 0 20px; /* Уменьшаем отступы */
+        padding: 80px 20px 0 20px;
     }
 
     .tit {
-        font-size: 70px; /* Уменьшаем размер шрифта */
+        font-size: 70px;
     }
 }
 
-/* Адаптация для планшетов */
 @media (max-width: 768px) {
     .titleWrapper {
-        min-height: 400px; /* Ещё меньше высота */
+        min-height: 500px;
     }
 
     .box {
-        padding: 60px 15px 0 15px; /* Уменьшаем отступы */
+        padding: 60px 15px 0 15px;
     }
 
     .tit {
-        font-size: 50px; /* Уменьшаем размер шрифта */
+        font-size: 60px;
+        line-height: 70px;
     }
 }
 
-/* Адаптация для телефонов */
 @media (max-width: 480px) {
     .titleWrapper {
-        min-height: 300px; /* Минимальная высота для телефонов */
-        clip-path: inset(0 0 20% 0); /* Обрезаем нижнюю часть на 20% */
+        min-height: 400px;
     }
 
     .box {
-        padding: 40px 10px 0 10px; /* Минимальные отступы для телефонов */
+        padding: 40px 10px 0 10px;
     }
 
     .tit {
-        font-size: 40px; /* Размер шрифта для телефонов */
+        font-size: 40px;
+        line-height: 50px;
     }
 
     .imgWrapper {
-        margin-top: 10px; /* Уменьшаем отступ сверху */
+        margin-top: 10px;
     }
 }

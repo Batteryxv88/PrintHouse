@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useAppSelector } from "app/providers/StoreProvider/Store/hooks";
 import { RootState } from "app/providers/StoreProvider/Store";
 import styles from "./ProductDetail.module.scss";
@@ -25,6 +25,7 @@ interface Photo {
 const ProductDetail = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+    const location = useLocation();
     const photos = useAppSelector((state: RootState) => state.products.photos);
     const products = useAppSelector((state: RootState) => state.productData.polygraphyProducts);
     const [product, setProduct] = useState<(ProductData & { url: string }) | null>(null);
@@ -100,7 +101,16 @@ const ProductDetail = () => {
     }, [id, photos, products, navigate]);
 
     const handleBack = () => {
-        navigate(-1);
+        if (location.pathname !== '/') {
+            navigate('/', { 
+                state: { scrollToProducts: true } 
+            });
+        } else {
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     };
 
     const handleConsultClick = () => {

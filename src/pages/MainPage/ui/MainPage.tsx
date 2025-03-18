@@ -27,6 +27,13 @@ const MainPage = () => {
                 }
             }, 100);
         }
+        // Проверяем, есть ли флаг для прокрутки вверх
+        else if (location.state && (location.state as any).scrollToTop) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     }, [location]);
 
     return (
