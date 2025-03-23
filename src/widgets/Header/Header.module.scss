@@ -81,26 +81,38 @@
     font-size: 16px;
     line-height: 1.5;
     white-space: nowrap;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     font-weight: 500;
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(to right, rgba(221, 86, 173, 1), rgba(226, 62, 109, 1));
-        transition: width 0.3s ease;
-    }
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
 
     &:hover {
         color: rgba(226, 62, 109, 1);
         
         &::after {
             width: 100%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: rgba(226, 62, 109, 0.5);
+        transition: width 0.3s ease;
+    }
+
+    &.active {
+        color: rgba(226, 62, 109, 1);
+        
+        &::after {
+            width: 100%;
+            background-color: rgba(226, 62, 109, 1);
         }
     }
 
@@ -112,8 +124,8 @@
         color: inherit;
         transition: color 0.3s ease;
 
-        &:hover {
-            color: rgba(226, 62, 109, 1);
+        .icon {
+            color: var(--textColorDarkBlue);
         }
     }
 }

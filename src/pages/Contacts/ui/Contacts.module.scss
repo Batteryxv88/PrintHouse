@@ -13,6 +13,7 @@
 }
 
 .title {
+    display: none;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--textColorDarkBlue);
@@ -141,6 +142,7 @@
     }
 
     .title {
+        display: block;
         font-size: 1.2rem;
         margin-bottom: 40px;
     }

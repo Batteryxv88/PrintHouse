@@ -1,0 +1,50 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Фон -->
+    <rect width="400" height="300" fill="#F8F9FA"/>
+    
+    <!-- Город на фоне -->
+    <path d="M0 100 L50 120 L100 90 L150 110 L200 80 L250 100 L300 70 L350 90 L400 60 L400 300 L0 300 Z" fill="#E9ECEF" opacity="0.5"/>
+    
+    <!-- Дорога -->
+    <path d="M0 220 C100 200, 300 200, 400 220 L400 300 L0 300 Z" fill="#DEE2E6"/>
+    <path d="M20 250 L60 250" stroke="#FFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <path d="M100 250 L140 250" stroke="#FFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <path d="M180 250 L220 250" stroke="#FFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <path d="M260 250 L300 250" stroke="#FFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <path d="M340 250 L380 250" stroke="#FFF" stroke-width="4" stroke-dasharray="8 8"/>
+
+    <!-- Фургон доставки -->
+    <!-- Основной корпус -->
+    <path d="M100 160 L280 160 L280 240 L100 240 Z" fill="#E23E6D"/>
+    <!-- Кабина -->
+    <path d="M280 180 L320 180 L320 240 L280 240 Z" fill="#E23E6D"/>
+    <!-- Окно кабины -->
+    <path d="M290 190 L310 190 L310 220 L290 220 Z" fill="#ADB5BD" opacity="0.8"/>
+    <!-- Колеса -->
+    <circle cx="140" cy="240" r="20" fill="#343A40"/>
+    <circle cx="140" cy="240" r="8" fill="#6C757D"/>
+    <circle cx="280" cy="240" r="20" fill="#343A40"/>
+    <circle cx="280" cy="240" r="8" fill="#6C757D"/>
+    
+    <!-- Логотип на фургоне -->
+    <text x="130" y="210" fill="white" font-family="Arial" font-size="24" font-weight="bold">PRINT TRIP</text>
+    
+    <!-- Декоративные элементы -->
+    <path d="M100 180 L280 180" stroke="white" stroke-width="2" opacity="0.3"/>
+    <path d="M100 200 L280 200" stroke="white" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Облака -->
+    <circle cx="50" cy="80" r="20" fill="#E9ECEF"/>
+    <circle cx="70" cy="70" r="25" fill="#E9ECEF"/>
+    <circle cx="90" cy="80" r="20" fill="#E9ECEF"/>
+    
+    <circle cx="250" cy="60" r="15" fill="#E9ECEF"/>
+    <circle cx="270" cy="50" r="20" fill="#E9ECEF"/>
+    <circle cx="290" cy="60" r="15" fill="#E9ECEF"/>
+    
+    <!-- Здания на фоне -->
+    <rect x="50" y="120" width="30" height="100" fill="#CED4DA"/>
+    <rect x="150" y="100" width="40" height="120" fill="#CED4DA"/>
+    <rect x="250" y="110" width="35" height="110" fill="#CED4DA"/>
+    <rect x="320" y="130" width="25" height="90" fill="#CED4DA"/>
+</svg> 

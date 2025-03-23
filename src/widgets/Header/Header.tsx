@@ -64,7 +64,7 @@ const Header = () => {
                 <span>print-trip@yandex.ru</span>
               </a>
             </li>
-            <li className={cls.li}>
+            <li className={`${cls.li} ${location.pathname === '/delivery' ? cls.active : ''}`}>
               <Link to="/delivery" aria-label="Информация об оплате и доставке">
                 <svg className={cls.icon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2ZM12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20ZM16.59,7.58L10,14.17L7.41,11.59L6,13L10,17L18,9L16.59,7.58Z"/>
@@ -72,7 +72,7 @@ const Header = () => {
                 <span>Оплата и доставка</span>
               </Link>
             </li>
-            <li className={cls.li}>
+            <li className={`${cls.li} ${location.pathname === '/contacts' ? cls.active : ''}`}>
               <Link to="/contacts" aria-label="Наши контакты">
                 <svg className={cls.icon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12,2C8.13,2 5,5.13 5,9C5,13.17 9.42,18.92 11.24,21.11C11.64,21.59 12.37,21.59 12.77,21.11C14.58,18.92 19,13.17 19,9C19,5.13 15.87,2 12,2ZM12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5Z"/>

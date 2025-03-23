@@ -28,13 +28,17 @@ const Contacts = () => {
                             'zoomControl',
                             'fullscreenControl',
                             'typeSelector',
-                            'searchControl'
-                        ]
+                        ],
+                        // Отключаем зум колесиком мыши
+                        behaviors: ['drag', 'multiTouch']
                     });
+
+                    // Отключаем зум колесиком мыши
+                    map.behaviors.disable('scrollZoom');
 
                     // Создаем метку
                     const placemark = new window.ymaps.Placemark(
-                        [55.788097, 37.586767],
+                        [55.788035, 37.583956],
                         {
                             balloonContent: 'Print Trip',
                             hintContent: 'Print Trip'
@@ -79,8 +83,8 @@ const Contacts = () => {
                         <div className={cls.contactBlock}>
                             <div className={cls.contactContent}>
                                 <h2 className={cls.sectionTitle}>Адрес</h2>
-                                <p>г. Москва, Бумажный проезд, 14с3</p>
-                                <p>Бизнес-центр "Бумажный"</p>
+                                <p>г. Москва, ул. Правды, 24с3</p>
+                                <p>Бизнес-центр "Правда"</p>
                             </div>
                         </div>
 
